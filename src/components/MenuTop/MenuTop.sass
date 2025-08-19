@@ -1,0 +1,50 @@
+$principal-color: #36306d
+$secundary-color: #211b52
+    
+.ant-layout-header
+    height: 70px
+    background-color: $principal-color
+    
+.menu-top
+    display: flex
+    width: 100%
+    height: inherit
+    &__logo
+        display: flex
+        margin-right: 40px
+        margin-top: -5px
+        width: 60px
+
+.logo2
+    background-image: url('../../assets/movie-logo.gif')
+    width: 100%
+    background-repeat: no-repeat
+    background-position: center
+    background-size: contain
+    
+
+.ant-menu
+    width: 100%
+
+    
+.ant-menu-item
+    font-size: 1rem
+    
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected 
+    background-color: $secundary-color
+    color: white
+
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-item:hover 
+    background-color: $secundary-color
+    color: white
+
+.ant-menu.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark .ant-menu-sub
+    background-color: $principal-color
+    li
+        &:hover
+            background-color: $secundary-color
+
+@media ( max-width: 380px )
+    .menu-top
+        justify-content: center

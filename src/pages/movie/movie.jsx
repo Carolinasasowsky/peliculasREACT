@@ -35,7 +35,8 @@ const RenderMovie = ({ movieInfo }) => {
 			style={{ backgroundImage: `url('${backdropPath}')` }}
 		>
 			<div className="movie__dark">
-				<Row className="fila">
+				{/* 👇 Aquí agregamos gutter={[0,0] para quitar márgenes de AntD */}
+				<Row className="fila" gutter={[0, 0]}>				
 					<Col span={8} offset={3} className="movie__poster">
 						<PosterMovie image={poster_path} />
 					</Col>

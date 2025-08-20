@@ -44,6 +44,10 @@ $secundary-color: #211b52
     li
         &:hover
             background-color: $secundary-color
+            
+.ant-menu-item a[href="/favoritos"]::after
+    content: " ❤️"
+
 
 @media ( max-width: 380px )
     .menu-top

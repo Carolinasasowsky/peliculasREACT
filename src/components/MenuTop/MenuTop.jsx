@@ -27,6 +27,9 @@ const MenuTop = () => {
 				<Menu.Item key="4">
 					<Link to="/search">Buscador</Link>
 				</Menu.Item>
+				<Menu.Item key="5">
+					<Link to="/favorites">Favoritos</Link>
+				</Menu.Item>
 			</Menu>
 		</div>
 	);

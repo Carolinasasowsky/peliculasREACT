@@ -9,29 +9,50 @@ $secundary-color: #211b52
     display: flex
     width: 100%
     height: inherit
+    justify-content: space-between
+    align-items: center
+
     &__logo
         display: flex
         margin-right: 40px
         margin-top: -5px
         width: 60px
 
+    &__toggle
+        display: none
+        font-size: 24px
+        color: white
+        cursor: pointer
+
+    .menu-desktop
+        flex: 1
+        justify-content: flex-end
+
+.menu-top__logo
+  display: flex
+  align-items: center
+  margin-right: 20px
+  width: 60px
+  height: 60px   // 👈 agrega altura fija
+
 .logo2
-    background-image: url('../../assets/movie-logo.gif')
-    width: 100%
-    background-repeat: no-repeat
-    background-position: center
-    background-size: contain
+  background-image: url('../../assets/movie-logo.gif')
+  width: 100%
+  height: 100%   // 👈 asegura que ocupe el espacio
+  background-repeat: no-repeat
+  background-position: center
+  background-size: contain
+
     
 
 .ant-menu
     width: 100%
 
-    
 .ant-menu-item
     font-size: 1rem
     
-
-.ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected 
+.ant-menu.ant-menu-dark .ant-menu-item-selected, 
+.ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected 
     background-color: $secundary-color
     color: white
 
@@ -39,7 +60,9 @@ $secundary-color: #211b52
     background-color: $secundary-color
     color: white
 
-.ant-menu.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark .ant-menu-sub
+.ant-menu.ant-menu-dark, 
+.ant-menu-dark .ant-menu-sub, 
+.ant-menu.ant-menu-dark .ant-menu-sub
     background-color: $principal-color
     li
         &:hover
@@ -49,6 +72,36 @@ $secundary-color: #211b52
     content: " ❤️"
 
 
-@media ( max-width: 380px )
+.menu-mobile
+  position: fixed
+  top: 70px
+  right: 0
+  background-color: $principal-color
+  z-index: 9999
+  display: flex
+  flex-direction: column
+  text-align: center   // 👈 centrado en lugar de right
+  width: 220px
+  transform: translateX(100%)   // fuera de pantalla por defecto
+  transition: transform 0.3s ease-in-out
+
+.menu-mobile.open
+  transform: translateX(0)     // entra con slide desde la derecha
+
+
+
+// RESPONSIVE
+@media (max-width: 768px)
+    .menu-desktop
+        display: none
+
+    .menu-top__toggle
+        display: block
+
+    .menu-mobile
+        display: block
+
+// Ajuste extra para pantallas muy chicas
+@media (max-width: 380px)
     .menu-top
         justify-content: center

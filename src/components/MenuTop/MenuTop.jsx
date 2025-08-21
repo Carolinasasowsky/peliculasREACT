@@ -11,6 +11,21 @@ const MenuTop = () => {
 		setIsMobileMenuOpen(!isMobileMenuOpen);
 	};
 
+	// Definimos los items del menú
+	const menuItems = [
+		{ key: "1", label: <Link to="/">Home</Link> },
+		{ key: "2", label: <Link to="/new-movies">Últimos lanzamientos</Link> },
+		{ key: "3", label: <Link to="/popular">Más populares</Link> },
+		{ key: "4", label: <Link to="/search">Buscador</Link> },
+		{ key: "5", label: <Link to="/favorites">Favoritos</Link> },
+	];
+
+	// Para el menú móvil agregamos onClick para cerrar el menú al seleccionar
+	const mobileMenuItems = menuItems.map((item) => ({
+		...item,
+		label: React.cloneElement(item.label, { onClick: toggleMenu }),
+	}));
+
 	return (
 		<div className="menu-top">
 			{/* Logo */}
@@ -30,56 +45,16 @@ const MenuTop = () => {
 				defaultSelectedKeys={["1"]}
 				className="menu-desktop"
 				style={{ lineHeight: "68px" }}
-			>
-				<Menu.Item key="1">
-					<Link to="/">Home</Link>
-				</Menu.Item>
-				<Menu.Item key="2">
-					<Link to="/new-movies">Últimos lanzamientos</Link>
-				</Menu.Item>
-				<Menu.Item key="3">
-					<Link to="/popular">Más populares</Link>
-				</Menu.Item>
-				<Menu.Item key="4">
-					<Link to="/search">Buscador</Link>
-				</Menu.Item>
-				<Menu.Item key="5">
-					<Link to="/favorites">Favoritos</Link>
-				</Menu.Item>
-			</Menu>
+				items={menuItems}
+			/>
 
-			{/* Menú móvil (slide) */}
+			{/* Menú móvil */}
 			<Menu
 				theme="dark"
 				mode="vertical"
 				className={`menu-mobile ${isMobileMenuOpen ? "open" : ""}`}
-			>
-				<Menu.Item key="1">
-					<Link to="/" onClick={toggleMenu}>
-						Home
-					</Link>
-				</Menu.Item>
-				<Menu.Item key="2">
-					<Link to="/new-movies" onClick={toggleMenu}>
-						Últimos lanzamientos
-					</Link>
-				</Menu.Item>
-				<Menu.Item key="3">
-					<Link to="/popular" onClick={toggleMenu}>
-						Más populares
-					</Link>
-				</Menu.Item>
-				<Menu.Item key="4">
-					<Link to="/search" onClick={toggleMenu}>
-						Buscador
-					</Link>
-				</Menu.Item>
-				<Menu.Item key="5">
-					<Link to="/favorites" onClick={toggleMenu}>
-						Favoritos
-					</Link>
-				</Menu.Item>
-			</Menu>
+				items={mobileMenuItems}
+			/>
 		</div>
 	);
 };

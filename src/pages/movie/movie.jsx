@@ -1,4 +1,8 @@
 // Dependencias
+import { useContext } from "react";
+import FavoritesContext from "../../components/Context/FavoritesContext";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+
 import React, { useState } from "react";
 import { Row, Col, Button, Modal } from "antd";
 import { useParams } from "react-router-dom";
@@ -36,9 +40,9 @@ const RenderMovie = ({ movieInfo }) => {
 		>
 			<div className="movie__dark">
 				{/* 👇 Aquí agregamos gutter={[0,0] para quitar márgenes de AntD */}
-				<Row className="fila" gutter={[0, 0]}>				
+				<Row className="fila" gutter={[0, 0]}>
 					<Col span={8} offset={3} className="movie__poster">
-						<PosterMovie image={poster_path} />
+						<PosterMovie image={poster_path} movie={movieInfo.result} />
 					</Col>
 					<Col span={10} className="movie__info">
 						<MovieInfo movieInfo={movieInfo} />
@@ -49,13 +53,40 @@ const RenderMovie = ({ movieInfo }) => {
 	);
 };
 
-const PosterMovie = ({ image }) => {
-	if (!image) return null;
+const PosterMovie = ({ image, movie }) => {
+	const { favorites, toggleFavorite } = useContext(FavoritesContext);
+	if (!image || !movie) return null;
 
 	const posterPath = `https://image.tmdb.org/t/p/original${image}`;
+	const isFavorite = favorites.some((f) => f.id === movie.id);
 
-	return <div style={{ backgroundImage: `url('${posterPath}')` }}></div>;
+	return (
+		<div className="movie__poster">
+			<div
+				className="poster-background"
+				style={{ backgroundImage: `url('${posterPath}')` }}
+			>
+				<button
+					className="favorite-btn"
+					onClick={() => toggleFavorite(movie)}
+					aria-label="Agregar a favoritos"
+				>
+					{isFavorite ? (
+						<AiFillHeart size={24} color="red" />
+					) : (
+						<AiOutlineHeart size={24} color="white" />
+					)}
+				</button>
+			</div>
+		</div>
+	);
 };
+
+
+
+
+
+
 
 const MovieInfo = ({ movieInfo }) => {
 	const movie = movieInfo?.result;

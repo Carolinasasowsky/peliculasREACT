@@ -1,10 +1,8 @@
 <p align="center">
-  <img src="assets/marquesina_cabecera.png" alt="Encabezado Buscador de Peliculas" width="600">
+  <img src="assets/marquesina_cabecera.png" alt="Encabezado Buscador de Peliculas" width="400">
 </p>
 
-________________________________
-
-### <p align="center"> Desarrolladora Frontend | Mgter. en Diseño Editorial | Diseñadora Gráfica </p>
+### <p align="center"> Desarrolladora Frontend | Mgter. en Diseño Editorial <br>Diseñadora Gráfica </p>
 
 ________________________________
 

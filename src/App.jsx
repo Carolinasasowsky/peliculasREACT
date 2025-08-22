@@ -23,7 +23,7 @@ const App = () => {
 	return (
 		<FavoritesProvider>
 			<Layout>
-				<BrowserRouter basename="/peliculasREACT">git add package.json src/App.jsx
+				<BrowserRouter basename="/peliculasREACT">
 					<Header style={{ zIndex: 1 }}>
 						<MenuTop />
 					</Header>

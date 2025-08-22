@@ -19,7 +19,7 @@ ________________________________
 
 ## 🌐 Ver la aplicación en funcionamiento
 
-👉[Explorar la interfaz desplegada]
+👉 [Explorar la interfaz desplegada](https://carolinasasowsky.github.io/peliculasREACT/)
 
 
 ________________________________

@@ -1,0 +1,174 @@
+.movie
+    height: calc( 100vh )
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    &__dark
+        position: absolute
+        top: 0
+        left: 0
+        height: calc( 100vh + 68px )
+        width: 100%
+        background-color: rgba(0, 0, 0, .6)
+        
+    > .ant-row
+        height: 100vh
+        display: flex
+        align-items: center
+
+    &__poster
+        position: relative
+        height: 70vh
+
+        .favorite-btn
+          position: absolute
+          top: 20px
+          right: 110px
+          background: transparent
+          border: none
+          cursor: pointer
+          z-index: 2
+     
+    
+        div
+            height: 100%
+            background-repeat: no-repeat
+            background-position: center
+            background-size: contain
+         
+                
+            
+.fila
+    display: flex !important
+    height: 100% !important
+    align-items: center !important
+
+.movie__info
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 70%
+    h1
+        color: white
+        margin: 0
+        font-size: 2.5em
+        span
+            font-size: 20px
+            margin-left: 12px
+            opacity: .7
+
+
+
+
+.button
+    height: 100%
+    background-color: transparent
+    color: white
+    border: 0
+    font-size: 25px
+    &:hover,
+    &:focus,
+    &:active
+        background-color: transparent
+        color: cyan
+    &:hover
+        cursor: pointer
+        
+.content
+    margin-top: 50px
+    h3
+        color: white
+        font-weight: bold
+        font-size: 24px
+    p, ul
+        color: white
+        font-size: 15px
+
+
+        
+.close-trailer-btn
+  position: absolute
+  top: 10px
+  right: 10px
+  width: 30px
+  height: 30px
+  border-radius: 50%
+  background-color: red
+  color: white
+  font-size: 18px
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 1051
+
+
+// 📱 Mobile
+
+@media (max-width: 768px)
+  // Contenedor oscuro
+  .movie__dark
+    position: relative !important
+    height: 100vh !important
+    min-height: auto !important
+    padding: 20px 0 40px 0 !important
+
+  // Fila en columna
+  .fila
+    flex-direction: column !important
+    align-items: center !important
+    margin: 0 !important
+    padding: 0 !important
+    height: auto !important
+    width: 100% !important
+
+  // Forzar columnas a ocupar 100%
+  .ant-col.movie__poster,
+  .ant-col.movie__info
+    flex: 0 0 100% !important
+    max-width: 100% !important
+    margin: 0 !important
+    padding: 0 !important
+
+  // Poster arriba, tamaño proporcional
+  .movie__poster
+    width: 180px
+    margin: 0 auto 10px auto
+    position: relative // 🔹 para que el botón se posicione respecto al poster
+
+    div
+      width: 100%
+      aspect-ratio: 2 / 3
+      background-size: contain
+      background-repeat: no-repeat
+      background-position: center
+      border-radius: 8px
+      position: relative // 🔹 para que el botón se posicione dentro
+
+      .favorite-btn
+        position: absolute
+        top: 10px
+        right: 10px
+        background: transparent
+        border: none
+        cursor: pointer
+        z-index: 0
+
+  // Info debajo
+  .movie__info
+    width: 95% !important
+    margin: 0 auto !important
+    padding: 0 !important
+    text-align: center !important
+
+    h1
+    button
+      margin-top: 20px
+
+    .content
+      margin: 15px 15px 0 15px
+
+    h3
+      text-align: left
+
+    p, ul
+      text-align: left

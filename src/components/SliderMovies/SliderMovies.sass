@@ -1,0 +1,31 @@
+.slider-movies
+    height: 52vh
+    &__movie
+        height: 52vh
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center top
+        &-info
+            display: flex
+            align-items: flex-end
+            height: 100%
+            padding-bottom: 40px
+            > div
+                background-color: rgba(216, 216, 216, 0.623)
+                margin: 0 auto
+                text-align: center
+                width: 50%
+                padding: 20px
+
+// 📱 Mobile adjustments
+@media (max-width: 768px)
+  .slider-movies__movie-info
+    > div
+      width: 90%         // más ancho para ocupar la pantalla pero mantener margen
+      padding: 10px      // menos padding para que quepa
+      h2
+        font-size: 18px  // título más pequeño
+      p
+        font-size: 12px  // descripción más pequeña
+      button
+        font-size: 14px  // botón proporcional

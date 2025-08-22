@@ -1,14 +1,40 @@
 .footer
-    display: flex
-    align-items: center
-    justify-content: center
-    background-color: #161616
+    background-color: #211b52
+    color: white
+    padding: 20px
+    text-align: center
     margin-top: 50px
-    padding: 15px 0
+
+    &__content
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 15px
+        flex-wrap: wrap  // para que en móvil se baje a otra línea
+
     p
-        margin: 1.5%
-        color: white
-        font-size: 1rem
+        margin: 0
+        font-size: 14px
+
         a
             color: white
-            font-weight: 600
+            text-decoration: none
+            margin-left: 5px
+
+            &:hover
+                color: #f39c12
+
+    &__social
+        display: flex
+        gap: 15px
+        font-size: 22px
+
+        a
+            color: white
+            transition: color 0.3s ease
+
+                        
+            // hover (desktop), focus y active (mobile/touch)
+            &:hover, &:focus, &:active
+                color: #f39c12
+                transform: scale(1.2)

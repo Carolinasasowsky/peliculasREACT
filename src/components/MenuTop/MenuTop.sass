@@ -31,14 +31,16 @@ $secundary-color: #211b52
 .menu-top__logo
   display: flex
   align-items: center
+  width: auto
+  height: 70px   // igual al header
   margin-right: 20px
-  width: 60px
-  height: 60px   // 👈 agrega altura fija
+  position: relative
+  z-index: 1000
 
 .logo2
-  background-image: url('../../assets/movie-logo.gif')
-  width: 100%
-  height: 100%   // 👈 asegura que ocupe el espacio
+  width: auto
+  height: 60px   // ajusta al alto del header
+  background-image: url('../../assets/moviefinder.png')
   background-repeat: no-repeat
   background-position: center
   background-size: contain
@@ -90,18 +92,68 @@ $secundary-color: #211b52
 
 
 
-// RESPONSIVE
+// =====================
+// RESPONSIVE (mobile)
+// =====================
 @media (max-width: 768px)
-    .menu-desktop
-        display: none
+  // Reset del header de AntD para que no empuje nada
+  .ant-layout-header
+    padding: 0 !important
+    line-height: 70px !important
+    height: 70px !important
 
-    .menu-top__toggle
-        display: block
+  // Contenedor
+  .menu-top
+    position: relative            // clave para anclar hijos
+    width: 100%
+    height: 70px
+    padding: 0
+    // NO usamos justify-content aquí porque anclamos con absolute
 
-    .menu-mobile
-        display: block
+    &__logo
+      position: absolute
+      left: 12px                  // separa del borde izquierdo
+      top: 50%
+      transform: translateY(-50%)
+      margin: 0
+      padding: 0
+      z-index: 2                  // por encima del header
 
-// Ajuste extra para pantallas muy chicas
-@media (max-width: 380px)
-    .menu-top
-        justify-content: center
+      .logo2
+        height: 40px
+        width: auto
+        margin: 0
+
+  // Botón hamburguesa
+  .menu-top__toggle
+    position: absolute
+    right: 12px                   // pegado al borde derecho
+    top: 50%
+    transform: translateY(-50%)
+    display: block
+    font-size: 24px
+    color: white
+    cursor: pointer
+    z-index: 2
+
+  // Menú de escritorio oculto en mobile
+  .menu-desktop
+    display: none !important
+
+  // Menú móvil oculto fuera de pantalla por defecto
+  .menu-mobile
+    position: fixed
+    top: 70px
+    right: 0
+    width: 220px
+    background-color: $principal-color
+    transform: translateX(100%)        // fuera de pantalla
+    transition: transform 0.3s ease-in-out
+    z-index: 9999
+    display: block                     // se mantiene en el flujo para animar
+
+  .menu-mobile.open
+    transform: translateX(0)           // entra con slide
+
+
+

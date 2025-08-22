@@ -3,8 +3,8 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
-	"homepage": "https://Carolinasasowsky.github.io/peliculasREACCIONA",
-	"scripts": {
+	"homepage": "https://Carolinasasowsky.github.io/peliculasREAT",
+"scripts": {
   "dev": "vite",
   "build": "vite build",
   "lint": "eslint .",

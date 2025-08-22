@@ -23,7 +23,7 @@ const App = () => {
 	return (
 		<FavoritesProvider>
 			<Layout>
-				<BrowserRouter basename="/">
+				<BrowserRouter basename="/peliculasREACT">git add package.json src/App.jsx
 					<Header style={{ zIndex: 1 }}>
 						<MenuTop />
 					</Header>
@@ -35,7 +35,6 @@ const App = () => {
 							<Route path="/search" element={<Search />} />
 							<Route path="/movie/:id" element={<Movie />} />
 							<Route path="/favorites" element={<Favorites />} />{" "}
-							
 							<Route path="*" element={<Error404 />} />
 						</Routes>
 					</Content>

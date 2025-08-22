@@ -4,10 +4,14 @@ import { useContext } from "react";
 import FavoritesContext from "../Context/FavoritesContext";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import "./MoviesCards.sass";
+import noDisponible from "../../assets/no-disponible.jpg"; 
+
 
 const { Meta } = Card;
 
 const MoviesCards = ({ movieList }) => {
+	
+	
 	const results = movieList?.results || [];
 
 	return (
@@ -27,7 +31,9 @@ const CardNewMovie = ({ movie }) => {
 	if (!movie) return null;
 
 	const { poster_path, id, title } = movie;
-	const posterPath = `https://image.tmdb.org/t/p/original${poster_path}`;
+	const posterPath = poster_path
+		? `https://image.tmdb.org/t/p/original${poster_path}`
+		: noDisponible;
 	const isFavorite = favorites.some((f) => f.id === id);
 
 	return (

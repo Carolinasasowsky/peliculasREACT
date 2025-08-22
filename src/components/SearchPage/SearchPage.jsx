@@ -1,5 +1,6 @@
 import { Button, Card } from "antd";
 import { Link } from "react-router-dom";
+import noDisponible from "../../assets/no-disponible.jpg";
 
 import "./SearchPage.sass";
 
@@ -35,8 +36,9 @@ const Prueba = (props) => {
 	const {
 		movie: { poster_path, id, title },
 	} = props;
-	const posterPath = `https://image.tmdb.org/t/p/original${poster_path}`;
-
+const posterPath = poster_path
+	? `https://image.tmdb.org/t/p/original${poster_path}`
+	: noDisponible;
 	return (
 		<Card
 			style={{ width: 240, margin: 10 }}

@@ -2,6 +2,7 @@
 import { useContext } from "react";
 import FavoritesContext from "../../components/Context/FavoritesContext";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import noDisponible from "../../assets/no-disponible.jpg";
 
 import React, { useState } from "react";
 import { Row, Col, Button, Modal } from "antd";
@@ -57,7 +58,9 @@ const PosterMovie = ({ image, movie }) => {
 	const { favorites, toggleFavorite } = useContext(FavoritesContext);
 	if (!image || !movie) return null;
 
-	const posterPath = `https://image.tmdb.org/t/p/original${image}`;
+	const posterPath = image
+		? `https://image.tmdb.org/t/p/original${image}`
+		: noDisponible;
 	const isFavorite = favorites.some((f) => f.id === movie.id);
 
 	return (

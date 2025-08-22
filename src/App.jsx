@@ -11,7 +11,7 @@ import Movie from "./pages/movie";
 import NewMovies from "./pages/new-movies";
 import Search from "./pages/search";
 import Popular from "./pages/popular";
-import Favorites from "./pages/favorites/Favorites"; // ⭐ nueva página
+import Favorites from "./pages/favorites/Favorites"; 
 
 
 // Componentes
@@ -35,7 +35,7 @@ const App = () => {
 							<Route path="/search" element={<Search />} />
 							<Route path="/movie/:id" element={<Movie />} />
 							<Route path="/favorites" element={<Favorites />} />{" "}
-							{/* ⭐ nueva ruta */}
+							
 							<Route path="*" element={<Error404 />} />
 						</Routes>
 					</Content>

@@ -47,9 +47,10 @@ ________________________________
 - **Axios**: Para realizar solicitudes a la API de películas.  
 - **React Router**: Para gestionar la navegación entre vistas.  
 - **React Context & Custom Hooks**: Para el manejo de estado global y lógica reutilizable.  
-- **Material UI / React Bootstrap**: Frameworks CSS para estilos y componentes predefinidos.  
-- **Font Awesome**: Para iconografía.  
-- **Swal**: Alertas y pop-ups interactivos.  
+- **Sass**: Preprocesador CSS para modularidad y reutilización de estilos.  
+- **Ant Design**: Librería de componentes UI para una experiencia visual consistente.  
+- **React Icons**: Conjunto de iconos integrados en React.  
+- **Swal (SweetAlert2)**: Alertas y pop-ups interactivos.  
 - **LocalStorage**: Persistencia de películas favoritas.  
 
 ________________________________
@@ -86,7 +87,7 @@ ________________________________
 ## 🧩 Funcionalidades secundarias
 
 - **Agregar a favoritos**: Los usuarios pueden marcar películas como favoritas y estas se almacenan en _ **LocalStorage** para persistencia entre sesiones.  
-- **Slider en Home**: Muestra al menos 5 películas recomendadas con una breve descripción.  
+- **Slider en Home**: Muestra al menos 20 películas recomendadas con una breve descripción.  
 - Listas de Populares y Mejor puntuadas: Muestra 10 películas por lista.  
 - Paginador en Últimos Lanzamientos y Populares: Permite navegar entre películas de 20 en 20.  
 - Footer en todas las vistas: Contiene información adicional y navegación secundaria. 
@@ -97,7 +98,7 @@ ________________________________
 
 - **Aplicar los conceptos de React** aprendidos durante el curso, incluyendo **useState, useEffect, hooks personalizados y contexto**.  
 - **Desarrollar una aplicación funcional y responsiva**, conectada a una API de películas.  
-- **Fomentar buenas prácticas de trabajo en equipo**, utilizando ramas para cada funcionalidad y realizando merges mediante PRs.  
+- **Fomentar buenas prácticas de trabajo en ramas**, y realizando merges mediante PRs.  
 - **Implementar funcionalidades avanzadas** como previsualización de trailers, actualización dinámica de URL y persistencia de favoritos.  
 - **Mejorar la experiencia del usuario**, asegurando fluidez en la navegación y coherencia visual en todas las secciones.
 
